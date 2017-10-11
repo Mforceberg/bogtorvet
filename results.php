@@ -33,10 +33,10 @@ include('includes/header.php');
      exit;
   }
 
- // $query = "SELECT forfatter.fornavn & forfatter.efternavn AS forfatternavn, bog.sprog, artiststage.yeaar, artiststage.month, artiststage.day, artiststage.clock, stage.stagename AS stagename FROM artist INNER JOIN artiststage ON artist.id = artiststage.artistid INNER JOIN stage ON artiststage.stageid = stage.id WHERE ".$searchtype." like '%".$searchterm."%'";
+
   
 
-$query = "SELECT forfatter.fornavn && forfatter.efternavn AS forfatternavn, bog.titel, bog.sprog, bog.udgivelsesaar FROM forfatter INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." LIKE '%".$searchterm."%'";
+$query = "SELECT forfatter.fornavn AS forfatter, forfatter.efternavn AS forfatter, bog.titel, bog.sprog, bog.udgivelsesaar FROM forfatter INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." LIKE '%".$searchterm."%'";
 
 	
      if(!$result = mysqli_query($con, $query)) { 	
@@ -69,9 +69,9 @@ $query = "SELECT forfatter.fornavn && forfatter.efternavn AS forfatternavn, bog.
 			     $row = $result->fetch_assoc();     
 			      echo    '<tr>';
 			      echo      '<td>'.($i+1).'</td>';
-			      echo      '<td>'. htmlspecialchars(stripslashes($row['forfatternavn'])) .'</td>';
+			      echo      '<td>'. htmlspecialchars(stripslashes($row['forfatter'])) .'</td>';
 			      echo      '<td>'. stripslashes($row['titel']) .'</td>';
-			      echo      '<td>'. stripslashes($row['sprog']) .'</td>'; 
+			      echo      '<td>'. stripslashes($row['sprog']) .'</td>';
 			      echo      '<td>'. stripslashes($row['udgivelsesaar']) .'</td>';
 			      
 			      echo    '</tr>';

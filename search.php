@@ -10,10 +10,10 @@ include('includes/header.php');
     <form action="results.php" method="post">
       <label for="searchtype">Vælg søgetype</label>
       <select name="searchtype"  class="form-control">
-        <option value="forfatternavn">Forfatter
+        <option value="forfatter">Forfatter
         <option value="titel">Bog
         <option value="sprog">Sprog
-        <option value="udgivelsesaar">udgivelses år  
+        <option value="udgivelsesaar">Udgivelses år  
       </select>
       <br/>
      
