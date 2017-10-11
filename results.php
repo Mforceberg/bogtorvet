@@ -1,8 +1,8 @@
 <?php
 //Page header
-$siteTitle = 'Search Result';
-$siteName = 'Explore the NorthSide Festival Programme 2017';
-$siteDescription = '';
+$siteTitle = 'Søge resultater';
+$siteName = 'Udforsk bøger på Bogtorvet';
+$siteDescription = 'Her er hvad du søgte på!';
 
 # Get contents from header.php
 include('includes/header.php');
@@ -36,7 +36,7 @@ include('includes/header.php');
 
   
 
-$query = "SELECT forfatter.fornavn AS forfatter, forfatter.efternavn AS forfatter, bog.titel, bog.sprog, bog.udgivelsesaar FROM forfatter INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." LIKE '%".$searchterm."%'";
+$query = "SELECT forfatter.fornavn, forfatter.efternavn, bog.titel, bog.sprog, bog.udgivelsesaar FROM forfatter INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." LIKE '%".$searchterm."%'";
 
 	
      if(!$result = mysqli_query($con, $query)) { 	
