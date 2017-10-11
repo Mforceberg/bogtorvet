@@ -36,7 +36,14 @@ include('includes/header.php');
 
   
 
-$query = "SELECT forfatter.fornavn, forfatter.efternavn, bog.titel, bog.sprog, bog.udgivelsesaar FROM forfatter INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." LIKE '%".$searchterm."%'";
+$query = "
+SELECT forfatter.forfatternavn, forfatter.land, bog.titel, bog.pris, bog.sprog, bog.forlag, bog.tilstand, bog.bind, bog.indbinding, bog.sider, bog.udgivelsesaar, bog.boghandel 
+FROM forfatter 
+INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." like '%".$searchterm."%'";
+
+
+  
+
 
 	
      if(!$result = mysqli_query($con, $query)) { 	
@@ -68,8 +75,7 @@ $query = "SELECT forfatter.fornavn, forfatter.efternavn, bog.titel, bog.sprog, b
 			  <?php for ($i=0; $i <$num_results; $i++) {
 			     $row = $result->fetch_assoc();     
 			      echo    '<tr>';
-			      echo      '<td>'.($i+1).'</td>';
-			      echo      '<td>'. htmlspecialchars(stripslashes($row['forfatter'])) .'</td>';
+			      echo      '<td>'. htmlspecialchars(stripslashes($row['forfatternavn'])) .'</td>';
 			      echo      '<td>'. stripslashes($row['titel']) .'</td>';
 			      echo      '<td>'. stripslashes($row['sprog']) .'</td>';
 			      echo      '<td>'. stripslashes($row['udgivelsesaar']) .'</td>';
