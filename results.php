@@ -33,13 +33,21 @@ include('includes/header.php');
      exit;
   }
 
+if ($searchtype == 'forfatternavn')
+{
+    $query = "
+SELECT forfatter.forfatternavn, forfatter.land, bog.titel, bog.pris, bog.sprog, bog.forlag, bog.tilstand, bog.bind, bog.indbinding, bog.sider, bog.udgivelsesaar, bog.boghandel 
+FROM forfatter 
+INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." like '".$searchterm."%'";
+}
 
-  
-
-$query = "
+else
+{
+    $query = "
 SELECT forfatter.forfatternavn, forfatter.land, bog.titel, bog.pris, bog.sprog, bog.forlag, bog.tilstand, bog.bind, bog.indbinding, bog.sider, bog.udgivelsesaar, bog.boghandel 
 FROM forfatter 
 INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." like '%".$searchterm."%'";
+}
 
 
   
@@ -68,6 +76,12 @@ INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNE
 			            <th>Titel</th>
 			            <th>Sprog</th>
                         <th>Udgivelses år</th>
+                        <th>Pris</th>
+                        <th>Antal Sider</th>
+                        <th>Indbinding</th>
+                        <th>Forlag</th>
+                        <th>Forhandler</th>
+                        <th>Tilstand</th>
 			        </tr>
 			    </thead>
 			    <tbody>
@@ -79,6 +93,12 @@ INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNE
 			      echo      '<td>'. stripslashes($row['titel']) .'</td>';
 			      echo      '<td>'. stripslashes($row['sprog']) .'</td>';
 			      echo      '<td>'. stripslashes($row['udgivelsesaar']) .'</td>';
+                  echo      '<td>'. stripslashes($row['pris']).' DKK' .'</td>';
+                  echo      '<td>'. stripslashes($row['sider']) .'</td>';
+                  echo      '<td>'. stripslashes($row['indbinding']) .'</td>';
+                  echo      '<td>'. stripslashes($row['forlag']) .'</td>';
+                  echo      '<td>'. stripslashes($row['boghandel']) .'</td>';
+                  echo      '<td>'. stripslashes($row['tilstand']) .'</td>';
 			      
 			      echo    '</tr>';
 			      

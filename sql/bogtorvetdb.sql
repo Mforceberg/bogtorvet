@@ -17,7 +17,7 @@ CREATE TABLE bog
   bind INT NOT NULL,
   indbinding VARCHAR(60) NOT NULL,
   tilstand VARCHAR(60) NOT NULL,
-  pris NUMERIC(6) NOT NULL,
+  pris FLOAT NOT NULL,
   udgivelsesaar INT NOT NULL,
   PRIMARY KEY (bogid)
 );
