@@ -1,0 +1,44 @@
+
+/* header styling */
+#sitetitleid {
+    color:#3E36C9;
+}
+
+#sitedescriptionid {
+    color:#5752B0;
+}
+
+#header {
+    background-color:#FC985D;
+    padding: 0.5rem;
+}
+
+
+/* body styling */
+body {
+    background-color:#FCAC7D;
+}
+
+.logo {
+    width:15%;
+    display:block;
+    margin:auto;
+    height:auto;
+    align-content: center;
+}
+/* footer styling */
+
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #FC985D;
+  text-align: center;
+}
+
+.text-muted {
+    color: #5752B0;
+}

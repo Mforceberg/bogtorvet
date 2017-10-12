@@ -7,8 +7,8 @@ $siteDescription = 'Her er hvad du søgte på!';
 # Get contents from header.php
 include('includes/header.php');
 ?> 
-
-<h1>Search Result(s)</h1>
+<img src="images/bookicon.png" alt="Bog ikon" class="logo">
+<h1>Søge Resultater</h1>
 <?php
   # Get the values searchtype and searchterm from previous page and create short variables
   $searchtype=$_POST['searchtype'];
@@ -43,10 +43,10 @@ INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNE
 
 else
 {
-    $query = "
+$query = "
 SELECT forfatter.forfatternavn, forfatter.land, bog.titel, bog.pris, bog.sprog, bog.forlag, bog.tilstand, bog.bind, bog.indbinding, bog.sider, bog.udgivelsesaar, bog.boghandel 
 FROM forfatter 
-INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." like '%".$searchterm."%'";
+INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." like '%".$searchterm."%'"; 
 }
 
 
@@ -67,7 +67,7 @@ INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNE
     ?>
 		<div class='container'>
             <div class='row'>
-                <p>Number of matches:<?php echo $num_results ?></p>
+                <p>Antal bøger fundet:<?php echo $num_results ?></p>
 
 			    <table class="table table-striped">
 			    <thead>
@@ -106,7 +106,7 @@ INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNE
 			  ?> <!-- For Loop ending -->
                 </tbody>
 			    </table>
-			    <button class="btn btn-primary btn-lg btn-block" onclick="goBack()">Go Back</button>
+			    <button class="btn btn-primary btn-lg btn-block" onclick="goBack()">Gå Tilbage</button>
 			</div>
 		</div><!-- CONTAINER END-->
 	

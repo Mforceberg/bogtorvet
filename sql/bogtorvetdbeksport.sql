@@ -74,7 +74,8 @@ INSERT INTO `bog` (`bogid`, `titel`, `sprog`, `sider`, `forlag`, `boghandel`, `b
 
 CREATE TABLE `forfatter` (
   `forfatterid` int(11) NOT NULL,
-  `forfatternavn` varchar(60) NOT NULL,
+  `forfatterfornavn` varchar(60) NOT NULL,
+  `forfatterefternavn` varchar(60) NOT NULL,
   `land` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

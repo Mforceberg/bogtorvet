@@ -13,7 +13,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!--My Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
    <script>
     function goBack() {
     window.history.back();
@@ -22,10 +22,12 @@
 
 </head>
 <body>
-	<div class="jumbotron">
+	<div class="jumbotron" id="header">
 		<div class="container">
-  			<h1><?php echo $siteName ?></h1>
-  			<p><?php echo $siteDescription ?></p>
+            <div class="container">
+  			<h1 id="sitetitleid"><?php echo $siteName ?></h1>
+  			<p id="sitedescriptionid"><?php echo $siteDescription ?></p>
+            </div>
 		</div>
 	</div>
 

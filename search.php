@@ -6,7 +6,9 @@ $siteDescription = 'Udfyld venligst søgeformularen.';
 
 # Including header.php file 
 include('includes/header.php');
-?>    
+?>  
+<div class="bodystyling">  
+   <img src="images/bookicon.png" alt="Bog ikon" class="logo">
     <form action="results.php" method="post">
       <label for="searchtype">Vælg søgetype</label>
       <select name="searchtype"  class="form-control">
@@ -24,6 +26,7 @@ include('includes/header.php');
 
       <input type="submit" name="submit" class="btn btn-success btn-lg btn-block" value="Søg">
     </form><!-- FORM END-->
+</div>
 <?php
 # Including footer.php file
 include('includes/footer.php');
