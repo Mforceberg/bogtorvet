@@ -38,7 +38,11 @@ CREATE TABLE `bog` (
   `bind` int(11) NOT NULL,
   `indbinding` varchar(60) NOT NULL,
   `tilstand` varchar(60) NOT NULL,
+<<<<<<< HEAD
   `pris` FLOAT NOT NULL,
+=======
+  `pris` decimal(6,0) NOT NULL,
+>>>>>>> faaddba424415aed44b89b41cf39b4b80f95b44a
   `udgivelsesaar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -56,7 +60,11 @@ INSERT INTO `bog` (`bogid`, `titel`, `sprog`, `sider`, `forlag`, `boghandel`, `b
 (7, 'Da Vinci Mysteriet', 'Dansk', 874, 'Gyldendal', 'Bog & idé', 1, 'Hardback', 'Fin', '200', 1998),
 (8, 'Den Afrikanske Farm', 'Dansk', 230, 'Politikens Forlag', 'Arnold Busck', 4, 'Paperback', 'Fin', '199', 1937),
 (9, 'Fluernes Herre', 'Tysk', 312, 'Gyldendal', 'Bog & idé', 3, 'Hardback', 'Fin', '299', 1956),
+<<<<<<< HEAD
 (10, 'Livestreaming Tokyo', 'Japansk', 189.95, 'Forlaget Carlsen', 'SAXO', 1, 'Hardback', 'Fin', '49', 2017);
+=======
+(10, 'Livestreaming Tokyo', 'Japansk', 189, 'Forlaget Carlsen', 'SAXO', 1, 'Hardback', 'Fin', '49', 2017);
+>>>>>>> faaddba424415aed44b89b41cf39b4b80f95b44a
 
 -- --------------------------------------------------------
 
