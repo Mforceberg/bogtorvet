@@ -9,6 +9,8 @@ include('includes/header.php');
 ?>  
 <div class="bodystyling">  
    <img src="images/bookicon.png" alt="Bog ikon" class="logo">
+    
+    <!-- dropdown to pick a searchtype -->
     <form action="results.php" method="post">
       <label for="searchtype">Vælg søgetype</label>
       <select name="searchtype"  class="form-control">
@@ -19,6 +21,7 @@ include('includes/header.php');
       </select>
       <br/>
      
+        <!-- form where the user can enter what they search for -->
       <div class="form-group">
         <label for="searchterm">Indtast søgeord:</label>
         <input type="text" name="searchterm" class="form-control" id="search" placeholder="Søg her...">

@@ -33,6 +33,7 @@ include('includes/header.php');
      exit;
   }
 
+#first inner join when searchterm is forfatternavn
 if ($searchtype == 'forfatternavn')
 {
     $query = "
@@ -41,6 +42,7 @@ FROM forfatter
 INNER JOIN forfatterbog ON forfatter.forfatterid = forfatterbog.forfatterid INNER JOIN bog ON forfatterbog.bogid = bog.bogid WHERE ".$searchtype." like '".$searchterm."%'";
 }
 
+# inner join for all other searchterms
 else
 {
 $query = "

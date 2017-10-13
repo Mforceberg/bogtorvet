@@ -1,3 +1,4 @@
+#Creat forfatter table
 CREATE TABLE forfatter
 (
   forfatterid INT NOT NULL AUTO_INCREMENT, 
@@ -6,6 +7,7 @@ CREATE TABLE forfatter
   PRIMARY KEY (forfatterid)
 );
 
+#Creat bog table
 CREATE TABLE bog
 (
   bogid INT NOT NULL AUTO_INCREMENT,
@@ -22,6 +24,7 @@ CREATE TABLE bog
   PRIMARY KEY (bogid)
 );
 
+#Creat forfatterbog table
 CREATE TABLE forfatterbog
 (
   forfatterid INT NOT NULL,
@@ -30,6 +33,8 @@ CREATE TABLE forfatterbog
   FOREIGN KEY (bogid) REFERENCES bog(bogid)
 );
 
+
+#insert data into forfatter table
 INSERT INTO `forfatter` (`forfatternavn`, `land`) VALUES 
 ('Morten Frost', 'Danmark'),
 ('Lars Løkke', 'Sverige'),
@@ -41,7 +46,7 @@ INSERT INTO `forfatter` (`forfatternavn`, `land`) VALUES
 ('Thomas Chance Morris', 'Japan'),
 ('Karen Blixen', 'Danmark');
 
-
+#insert data into bog table
 INSERT INTO `bog` (`titel`,`sprog`,`sider`,`forlag`,`boghandel`,`bind`,`indbinding`,`tilstand`,`pris`, `udgivelsesaar`) VALUES
 ('Mordet på orientexpressen', 'Soumi', '1042', 'Gyldendal', 'Bog & idé', '2', 'Hardback', 'Fin', '125', '1832'),
 ('Lars: en morders bekændelser', 'Tysk', '10', 'Politikens Forlag', 'Bog & idé', '1', 'Paperback', 'Grim', '819.95', '2017'),
@@ -54,6 +59,8 @@ INSERT INTO `bog` (`titel`,`sprog`,`sider`,`forlag`,`boghandel`,`bind`,`indbindi
 ('Fluernes Herre', 'Tysk', '312', 'Gyldendal', 'Bog & idé', '3', 'Hardback', 'Fin', '299.50', '1956'),
 ('Livestreaming Tokyo', 'Japansk', '189', 'Forlaget Carlsen', 'SAXO', '1', 'Hardback', 'Fin', '49.95', '2017');
 
+
+#insert connection between forfatter table and bog table
 INSERT INTO `forfatterbog` (`forfatterid`, `bogid`) VALUES
 (1,1),
 (2,2),
